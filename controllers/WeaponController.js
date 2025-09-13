@@ -1,8 +1,8 @@
 import Weapon from '../models/WeaponModel.js';
 
 const newWeapon = async (request, response) => {
-    const { name, image, features } = request.body;
-    const weapon = new Weapon({ name, image, features });
+    const { name, description, image, features } = request.body;
+    const weapon = new Weapon({ name, description, image, features });
     const data = await weapon.save();
     response.status(201).json({ msg:"weapon created", data });
 }

@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const characterSchema = new Schema({
     name: String,
+    description: String,
     ranges: String,
     gender: {
         type: String,
-        enum: ["masculine", "feminine"],
+        enum: ["Masculine", "Feminine"],
     },
     weapons: [String],
     equipment: [String],
@@ -18,6 +19,7 @@ export default Character;
 
 // {
 //     "name": "",
+//     "description": "",
 //     "ranges": "",
 //     "gender": "",
 //     "weapons": [],
