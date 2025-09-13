@@ -19,8 +19,8 @@ const app = express();
 app.use(express.json());
 app.use('/', express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('<h1> API REST </h1>');
+app.get('/', (request, response) => {
+    response.send('<h1> API REST </h1>');
 })
 
 routerAPI(app);

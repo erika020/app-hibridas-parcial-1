@@ -1,16 +1,26 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
+const characterSchema = new Schema({
     name: String,
-    skills:[String],
     ranges: String,
     gender: {
         type: String,
         enum: ["masculine", "feminine"],
     },
-    image: String,
+    weapons: [String],
+    equipment: [String],
+    image: String
 });
 
-const Character = mongoose.model('Character', schema);
+const Character = mongoose.model('Character', characterSchema);
 export default Character;
+
+// {
+//     "name": "",
+//     "ranges": "",
+//     "gender": "",
+//     "weapons": [],
+//     "equipment": [],
+//     "image:" ""
+// }

@@ -1,43 +1,43 @@
 import Character from '../models/CharacterModel.js';
 
-const newCharacter = async (req, res) => {
-    const {name, skills, ranger, gender, image} = request.body;
-    const character = newCharacter({name, skills, ranger, gender, image});
+const newCharacter = async (request, response) => {
+    const { name, ranges, gender, weapons, equipment, image } = request.body;
+    const character = new Character({ name, ranges, gender, weapons, equipment, image });
     const data = await character.save();
-    response.status(201).json({msg:"ok", data});
+    response.status(201).json({ msg:'character created', data });
 }
 
-const getCharacterById = async (req, res) => {
-    const id = req.params.id;
-    const character = await Character.findByIdAndDelete(id);
+const getCharacterById = async (request, response) => {
+    const id = request.params.id;
+    const character = await Character.findById(id);
     if(character){
-        res.status(200).json({mgs: 'Personaje eliminado'});
+        response.status(200).json(character);
     }else{
-        res.status(404).json({msg: 'Personaje no encontrado'});
+        response.status(404).json({ msg: 'character not found' });
     }
 }
 
-const deleteCharacterById = async (req, res) => {
-    const id = req.params.id;
+const deleteCharacterById = async (request, response) => {
+    const id = request.params.id;
     const character = await Character.findByIdAndDelete(id);
     if(character){
-        res.status(200).json({mgs: 'Personaje eliminado'});
+        response.status(200).json({ mgs: 'character deleted' });
     }else{
-        res.status(404).json({msg: 'Personaje no encontrado'});
+        response.status(404).json({ msg: 'character not found' });
     }
 }
 
-const updateCharacterById = async (req, res) =>{
-    const id = req.params.id;
-    const body = req.body;
+const updateCharacterById = async (request, response) =>{
+    const id = request.params.id;
+    const body = request.body;
 
-    const character = await User.findByIdAndUpdate(id, body);
+    const character = await Character.findByIdAndUpdate(id, body);
     if(character){
-        res.status(200).json({mgs: 'Personaje eliminado'});
+        response.status(200).json({ mgs: 'character updated' });
     }else{
-        res.status(404).json({msg: 'Personaje no encontrado'});
+        response.status(404).json({ msg: 'character not found' });
     }
 }
 export{
     newCharacter, getCharacterById, deleteCharacterById, updateCharacterById
-};
+}

@@ -2,9 +2,9 @@ import express from 'express';
 import { deleteCharacterById, getCharacterById, newCharacter, updateCharacterById } from '../controllers/CharacterController.js';
 const router = express.Router();
 
-router.get('/', newCharacter);
+router.post('/', newCharacter);
 router.get('/:id', getCharacterById);
-router.get('/:id', deleteCharacterById);
-router.get('/:id', updateCharacterById);
+router.delete('/:id', deleteCharacterById);
+router.put('/:id', updateCharacterById);
 
 export default router;
