@@ -10,9 +10,9 @@ const weaponSchema = new Schema({
         damage: String,
         caliber: String,
         fireRate: String,
-        startAmmo: Number,
+        startAmmo: String,
         maxAmmo: String,
-        reloadTime: Number,
+        reloadTime: String,
         recoil: String
     }
 });

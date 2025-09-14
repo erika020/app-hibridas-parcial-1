@@ -1,8 +1,8 @@
 import Character from '../models/CharacterModel.js';
 
 const newCharacter = async (request, response) => {
-    const { name, description, ranges, gender, weapons, equipment, image } = request.body;
-    const character = new Character({ name, description, ranges, gender, weapons, equipment, image });
+    const { name, description, rank, gender, weapons, equipment, image } = request.body;
+    const character = new Character({ name, description, rank, gender, weapons, equipment, image });
     const data = await character.save();
     response.status(201).json({ msg:'character created', data });
 }
