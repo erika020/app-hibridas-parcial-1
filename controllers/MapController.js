@@ -1,62 +1,43 @@
 import Map from "../models/MapModel.js";
 
 const newMap = async (request, response) => {
-    try {
-        const map = new Map(request.body);
-        const savedMap = await map.save();
-        response.status(201).json(savedMap);
-    } catch (error) {
-        response.status(400).json({ message: "Error al crear el mapa", error: error.message });
-    }
-};
+    const { name, teams, location, date, terrain, modes } = request.body;
+    const map = new Map({ name, teams, location, date, terrain, modes });
+    const data = await map.save();
+    response.status(201).json({ msg: 'map created', data });
+}
 
 const getMapById = async (request, response) => {
-    try {
-        const { id } = request.params;
-        const map = await Map.findById(id);
-
-        if (!map) {
-            return response.status(404).json({ message: "Mapa no encontrado" });
-        }
-
-        response.json(map);
-    } catch (error) {
-        response.status(500).json({ message: "Error al obtener el mapa", error: error.message });
+    const id = request.params.id;
+    const map = await Map.findById(id);
+    if (map) {
+        response.status(200).json(map);
+    } else {
+        response.status(404).json({ msg: 'map not found' });
     }
-};
+}
 
 const deleteMapById = async (request, response) => {
-    try {
-        const { id } = request.params;
-        const map = await Map.findByIdAndDelete(id);
-
-        if (!map) {
-            return response.status(404).json({ message: "Mapa no encontrado" });
-        }
-
-        response.json({ message: "Mapa eliminado correctamente" });
-    } catch (error) {
-        response.status(500).json({ message: "Error al eliminar el mapa", error: error.message });
+    const id = request.params.id;
+    const map = await Map.findByIdAndDelete(id);
+    if (map) {
+        response.status(200).json({ msg: 'map deleted' });
+    } else {
+        response.status(404).json({ msg: 'map not found' });
     }
-};
+}
 
 const updateMapById = async (request, response) => {
-    try {
-        const { id } = request.params;
-        const updatedMap = await Map.findByIdAndUpdate(id, request.body, {
-            new: true,
-            runValidators: true
-        });
+    const id = request.params.id;
+    const body = request.body;
 
-        if (!updatedMap) {
-            return response.status(404).json({ message: "Mapa no encontrado" });
-        }
-
-        response.json(updatedMap);
-    } catch (error) {
-        response.status(400).json({ message: "Error al actualizar el mapa", error: error.message });
+    const map = await Map.findByIdAndUpdate(id, body);
+    if (map) {
+        response.status(200).json({ msg: 'map updated' });
+    } else {
+        response.status(404).json({ msg: 'map not found' });
     }
-};
+}
 
 export {
     newMap, getMapById, deleteMapById, updateMapById
