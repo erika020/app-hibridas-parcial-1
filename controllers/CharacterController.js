@@ -7,6 +7,11 @@ const newCharacter = async (request, response) => {
     response.status(201).json({ msg:'character created', data });
 }
 
+const listCharacter = async (request, response) =>{
+    const character = await Character.find();
+    response.json(character);
+}
+
 const getCharacterById = async (request, response) => {
     const id = request.params.id;
     const character = await Character.findById(id);
@@ -39,5 +44,5 @@ const updateCharacterById = async (request, response) =>{
     }
 }
 export{
-    newCharacter, getCharacterById, deleteCharacterById, updateCharacterById
+    newCharacter, getCharacterById, deleteCharacterById, updateCharacterById, listCharacter
 }

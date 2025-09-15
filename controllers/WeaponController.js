@@ -7,6 +7,11 @@ const newWeapon = async (request, response) => {
     response.status(201).json({ msg:"weapon created", data });
 }
 
+const listWeapon = async (request, response) =>{
+    const weapon = await Weapon.find();
+    response.json(weapon);
+}
+
 const getWeaponById = async (request, response) => {
     const id = request.params.id;
     const weapon = await Weapon.findById(id);
@@ -39,5 +44,5 @@ const updateWeaponById = async (request, response) => {
     }
 }
 export{
-    newWeapon, getWeaponById, deleteWeaponById, updateWeaponById
+    newWeapon, getWeaponById, deleteWeaponById, updateWeaponById, listWeapon
 }

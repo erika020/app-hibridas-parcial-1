@@ -7,6 +7,11 @@ const newMission = async (request, response) => {
     response.status(201).json({ msg: 'mission created', data });
 }
 
+const listMission = async (request, response) =>{
+    const mission = await Mission.find();
+    response.json(mission);
+}
+
 const getMissionById = async (request, response) => {
     const id = request.params.id;
     const mission = await Mission.findById(id);
@@ -40,5 +45,5 @@ const updateMissionById = async (request, response) => {
 }
 
 export {
-    newMission, getMissionById, deleteMissionById, updateMissionById
+    newMission, getMissionById, deleteMissionById, updateMissionById, listMission
 };

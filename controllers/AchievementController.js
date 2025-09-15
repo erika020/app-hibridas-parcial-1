@@ -7,6 +7,11 @@ const newAchievement = async (request, response) => {
     response.status(201).json({ msg: 'achievement created', data});
 }
 
+const listAchievement = async (request, response) =>{
+    const achievement = await Achievement.find();
+    response.json(achievement);
+}
+
 const getAchievementById = async (request, response) => {
     const id = request.params.id;
     const achievement = await Achievement.findById(id);
@@ -40,5 +45,5 @@ const updateAchievementById = async (request, response) =>{
 }
 
 export{
-    newAchievement, getAchievementById, deleteAchievementById, updateAchievementById
+    newAchievement, getAchievementById, deleteAchievementById, updateAchievementById, listAchievement
 }

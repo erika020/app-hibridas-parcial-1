@@ -7,6 +7,11 @@ const newMap = async (request, response) => {
     response.status(201).json({ msg: 'map created', data });
 }
 
+const listMap = async (request, response) =>{
+    const map = await Map.find();
+    response.json(map);
+}
+
 const getMapById = async (request, response) => {
     const id = request.params.id;
     const map = await Map.findById(id);
@@ -40,5 +45,5 @@ const updateMapById = async (request, response) => {
 }
 
 export {
-    newMap, getMapById, deleteMapById, updateMapById
+    newMap, getMapById, deleteMapById, updateMapById, listMap
 };

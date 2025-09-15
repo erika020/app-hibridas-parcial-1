@@ -1,10 +1,11 @@
 import express from "express";
-import { newMission, getMissionById, deleteMissionById, updateMissionById } from "../controllers/MissionController.js";
+import { newMission, getMissionById, deleteMissionById, updateMissionById, listMission } from "../controllers/MissionController.js";
 const router = express.Router();
 
 router.post('/', newMission);
 router.get('/:id', getMissionById);
 router.put('/:id', updateMissionById);
 router.delete('/:id', deleteMissionById);
+router.get('/', listMission);
 
 export default router;

@@ -16,13 +16,3 @@ const characterSchema = new Schema({
 
 const Character = mongoose.model('Character', characterSchema);
 export default Character;
-
-// {
-//     "name": "",
-//     "description": "",
-//     "ranges": "",
-//     "gender": "",
-//     "weapons": [],
-//     "equipment": [],
-//     "image:" ""
-// }

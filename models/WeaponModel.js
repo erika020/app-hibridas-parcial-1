@@ -19,19 +19,3 @@ const weaponSchema = new Schema({
 
 const Weapon = mongoose.model("Weapon", weaponSchema);
 export default Weapon;
-
-// {
-//     "name": "",
-//     "image": ",
-//     "description": ",
-//     "features":{
-//         "weaponClass": "",
-//         "damage": "",
-//         "caliber": "",
-//         "fireRate": "",
-//         "startAmmo": ,
-//         "maxAmmo": "",
-//         "reloadTime": ,
-//         "recoil": "",
-//     }
-// }

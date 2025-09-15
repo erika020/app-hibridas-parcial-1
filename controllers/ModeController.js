@@ -7,6 +7,11 @@ const newMode = async (request, response) => {
     response.status(201).json({ msg: 'mode created', data });
 }
 
+const listMode = async (request, response) =>{
+    const mode = await Mode.find();
+    response.json(mode);
+}
+
 const getModeById = async (request, response) => {
     const id = request.params.id;
     const mode = await Mode.findById(id);
@@ -40,5 +45,5 @@ const updateModeById = async (request, response) => {
 }
 
 export {
-    newMode, getModeById, deleteModeById, updateModeById
+    newMode, getModeById, deleteModeById, updateModeById, listMode
 };

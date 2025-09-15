@@ -9,9 +9,3 @@ const achievementSchema = new Schema({
 
 const Achievement = mongoose.model("Achievement", achievementSchema);
 export default Achievement;
-
-// {
-//     "name": "",
-//     "description": "",
-//     "points": ""
-// }

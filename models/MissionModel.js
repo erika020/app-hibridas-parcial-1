@@ -6,10 +6,10 @@ const missionSchema = new Schema({
     plot: String,
     team: String,
     enemies: [String],
-    Place: String,
+    place: String,
     objective: String,
     date: {type: Date}
 })
 
-const Mission = moongose.model("Mission", missionSchema);
+const Mission = mongoose.model("Mission", missionSchema);
 export default Mission;
