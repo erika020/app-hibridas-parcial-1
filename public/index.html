@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    
+    <div id="sidebar">
+        <h2>API documentation</h2>
+        <hr>
+        <a href="#welcome">Welcome!</a>
+        <a href="#apikey">API Key</a>
+
+        <div class="mt-3">
+            <h6 class="text-secondary">Examples CRUD</h6>
+            <div class="accordion" id="crudAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#crudLinks">see examples</button>
+                    </h2>
+                    <div id="crudLinks" class="accordion-collapse collapse">
+                        <div class="accordion-body p-2">
+                            <a href="#achievement">Achievement</a>
+                            <a href="#characters">Characters</a>
+                            <a href="#maps">Maps</a>
+                            <a href="#mission">Mission</a>
+                            <a href="#mode">Mode</a>
+                            <a href="#weapon">Weapon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="p-4">
+        <button class="btn btn-outline-primary mb-3" id="toggleSidebar">☰</button>
+
+        <section id="welcome">
+            <h2>Welcome to the documentation</h2>
+            <p>This API allows you to manage characters, weapons, maps, missions, modes, and achievements in Call of Duty: Black Ops 6.</p>
+        </section>
+
+        <section id="apikey">
+            <h2>API Key</h2>
+            <p>To authenticate your requests, use your <code>API Key</code></p>
+            <p>coming soon</p>
+        </section>
+
+        <section id="achievement">
+            <h2>Achievement</h2>
+            <h3><span class="method post">POST</span><span class="endpoint">/achievement</span> — Create achievement</h3>
+
+            <h4>Body (JSON):</h4>
+            <pre><code>{
+                "name": "Decorated Agent",
+                "description": "Unlock all Trophies in Call Of Duty: Black Ops 6",
+                "points": "Platinum"  
+            }</code></pre>
+
+            <p>Success: <code>201</code> with saved document.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/achievement</span> — List all achievements</h3>
+            <p>Returns an array of achievement documents.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/achievement/:id</span> — Get by id</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method put">PUT</span><span class="endpoint">/achievement/:id</span> — Update</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method del">DELETE</span><span class="endpoint">/achievement/:id</span> — Delete</h3>
+            <p>Deletes the achievement and returns <code>200</code> on success.</p>
+        
+        
+        </section>
+
+        <section id="characters">
+            <h2>Characters</h2>
+            <p>Routes for character management.</p>
+            <h3><span class="method post">POST</span><span class="endpoint">/character</span> — Create character</h3>
+
+            <h4>Body (JSON):</h4>
+            <pre><code>{
+            "name": "Troy Marshall",
+            "description": "Troy Marshall is a main character featured in Call of Duty: Black Ops 6...",
+            "rank": ["CIA Agent", "Leader of Rogue Black Ops", "Colonel"],
+            "gender": "Male",
+            "weapons": ["Model L", "GS45", "DM-10" ...],
+            "equipment": ["Flashlight", "Crowbar", "Gas Mask" ...],
+            "image": "url"
+            }</code></pre>
+
+            <p>Success: <code>201</code> with saved document.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/character</span> — List all characters</h3>
+            <p>Returns an array of character documents.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/character/:id</span> — Get by id</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method put">PUT</span><span class="endpoint">/character/:id</span> — Update</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method del">DELETE</span><span class="endpoint">/character/:id</span> — Delete</h3>
+            <p>Deletes the character and returns <code>200</code> on success.</p>
+
+        </section>
+
+        <section id="maps">
+            <h2>Maps</h2>
+            <h3><span class="method post">POST</span><span class="endpoint">/map</span> — Create map</h3>
+
+            <h4>Body (JSON):</h4>
+            <pre><code>{
+                "name": "Babylon",
+                "teams": ["Rogue Black Ops", "Crimson One"],
+                "location": "Iraq",
+                "date": "1991-03-10",
+                "terrain": "Desert / Ancient ruins",
+                "modes": "2v2, Face-Off 6v6, All Core Modes"
+            }</code></pre>
+
+            <p>Success: <code>201</code> with saved document.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/map</span> — List all maps</h3>
+            <p>Returns an array of map documents.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/map/:id</span> — Get by id</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method put">PUT</span><span class="endpoint">/map/:id</span> — Update</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method del">DELETE</span><span class="endpoint">/map/:id</span> — Delete</h3>
+            <p>Deletes the map and returns <code>200</code> on success.</p>
+        
+        </section>
+
+        <section id="mission">
+            <h2>Mission</h2>
+            <h3><span class="method post">POST</span><span class="endpoint">/mission</span> — Create mission</h3>
+
+            <h4>Body (JSON):</h4>
+            <pre><code>{
+                "name": "Separation Anxiety",
+                "plot": "The team captures Jane Harrow, who reveals that she joined Pantheon after information...",
+                "team": "Troy Marshall, William 'Case' Calderón, Russell Adler",
+                "enemies": ["Pantheon", "Jane Harrow"],
+                "place": "Burgas, Bulgaria",
+                "objective": "Interrogate Jane Harrow and prevent the false flag attack on the Capitol.",
+                "date": "1991-04-10"
+            }</code></pre>
+
+            <p>Success: <code>201</code> with saved document.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/mission</span> — List all missions</h3>
+            <p>Returns an array of mission documents.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/mission/:id</span> — Get by id</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method put">PUT</span><span class="endpoint">/mission/:id</span> — Update</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method del">DELETE</span><span class="endpoint">/mission/:id</span> — Delete</h3>
+            <p>Deletes the mission and returns <code>200</code> on success.</p>
+
+        </section>
+
+        <section id="mode">
+            <h2>Mode</h2>
+            <h3><span class="method post">POST</span><span class="endpoint">/mode</span> — Create mode</h3>
+
+            <h4>Body (JSON):</h4>
+            <pre><code>{
+                "name": "Kill Confirmed",
+                "description": "Players must eliminate enemies and collect their dog tags to score points.",
+                "rules": "Eliminations and dog tag collection; the team with the most points at the end of the timer wins."
+            }</code></pre>
+
+            <p>Success: <code>201</code> with saved document.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/mode</span> — List all modes</h3>
+            <p>Returns an array of mode documents.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/mode/:id</span> — Get by id</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method put">PUT</span><span class="endpoint">/mode/:id</span> — Update</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method del">DELETE</span><span class="endpoint">/mode/:id</span> — Delete</h3>
+            <p>Deletes the mode and returns <code>200</code> on success.</p>
+            
+        </section>
+
+        <section id="weapon">
+            <h2>Weapon</h2>
+            <h3><span class="method post">POST</span><span class="endpoint">/mission</span> — Create mission</h3>
+
+            <h4>Body (JSON):</h4>
+            <pre><code>{
+                "name": "AK-74",
+                "description": "The AK-74 is an assault rifle featured in Call of Duty: Black Ops 6."
+                "image": "url",
+                "features": {
+                    "weaponClass": "Assault Rifles",
+                    "damage": "27-22",
+                    "caliber": "5.45×39mm",
+                    "fireRate": "652 RPM",
+                    "startAmmo": "30+60",
+                    "maxAmmo": "30+180",
+                    "reloadTime": "2.730s",
+                    "recoil": "None"
+                }
+            }</code></pre>
+
+            <p>Success: <code>201</code> with saved document.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/mission</span> — List all missions</h3>
+            <p>Returns an array of mission documents.</p>
+
+            <h3><span class="method get">GET</span><span class="endpoint">/mission/:id</span> — Get by id</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method put">PUT</span><span class="endpoint">/mission/:id</span> — Update</h3>
+            <p>Return <code>200</code> with document or <code>404</code> if not found.</p>
+
+            <h3><span class="method del">DELETE</span><span class="endpoint">/mission/:id</span> — Delete</h3>
+            <p>Deletes the mission and returns <code>200</code> on success.</p>
+        
+        </section>
+
+    </div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

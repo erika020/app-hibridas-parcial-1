@@ -3,9 +3,9 @@ import { newMission, getMissionById, deleteMissionById, updateMissionById, listM
 const router = express.Router();
 
 router.post('/', newMission);
+router.get('/', listMission);
 router.get('/:id', getMissionById);
 router.put('/:id', updateMissionById);
 router.delete('/:id', deleteMissionById);
-router.get('/', listMission);
 
 export default router;

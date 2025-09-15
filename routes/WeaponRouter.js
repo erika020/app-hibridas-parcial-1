@@ -3,9 +3,9 @@ import { newWeapon, getWeaponById, deleteWeaponById, updateWeaponById, listWeapo
 const router = express.Router();
 
 router.post('/', newWeapon);
+router.get('/', listWeapon);
 router.get('/:id', getWeaponById);
 router.delete('/:id', deleteWeaponById);
 router.put('/:id', updateWeaponById);
-router.get('/', listWeapon);
 
 export default router;

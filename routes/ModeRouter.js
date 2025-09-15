@@ -3,9 +3,9 @@ import { newMode, getModeById, deleteModeById, updateModeById, listMode } from "
 const router = express.Router();
 
 router.post('/', newMode);
+router.get('/', listMode);
 router.get('/:id', getModeById);
 router.put('/:id', updateModeById);
 router.delete('/:id', deleteModeById);
-router.get('/', listMode);
 
 export default router;

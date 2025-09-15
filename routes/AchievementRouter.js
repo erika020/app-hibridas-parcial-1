@@ -4,9 +4,9 @@ import { getAchievementById, deleteAchievementById, updateAchievementById, newAc
 const router = express.Router();
 
 router.post('/', newAchievement);
+router.get('/', listAchievement);
 router.get('/:id', getAchievementById);
 router.put('/:id', updateAchievementById);
 router.delete('/:id', deleteAchievementById);
-router.get('/', listAchievement);
 
 export default router;

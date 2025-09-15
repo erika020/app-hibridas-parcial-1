@@ -3,9 +3,9 @@ import { newMap, getMapById, deleteMapById, updateMapById, listMap } from "../co
 const router = express.Router();
 
 router.post('/', newMap);
+router.get('/', listMap);
 router.get('/:id', getMapById);
 router.put('/:id', updateMapById);
 router.delete('/:id', deleteMapById);
-router.get('/', listMap);
 
 export default router;
