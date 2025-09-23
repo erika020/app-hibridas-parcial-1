@@ -4,6 +4,7 @@ import achievementRouter from './AchievementRouter.js';
 import mapRouter from './MapRouter.js';
 import missionRouter from './MissionRouter.js';
 import modeRouter from './ModeRouter.js';
+import userRouter from './UserRouter.js'
 
 const routerAPI = (app) =>{
     app.use('/api/character', characterRouter);
@@ -12,6 +13,6 @@ const routerAPI = (app) =>{
     app.use('/api/map', mapRouter);
     app.use('/api/mission', missionRouter);
     app.use('/api/mode', modeRouter);
-
+    app.use('/api/user', userRouter);
 }
 export default routerAPI;
