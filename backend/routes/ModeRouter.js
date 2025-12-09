@@ -1,0 +1,11 @@
+import express from "express";
+import { newMode, getModeById, deleteModeById, updateModeById, listMode } from "../controllers/ModeController.js";
+const router = express.Router();
+
+router.post('/', newMode);
+router.get('/', listMode);
+router.get('/:id', getModeById);
+router.put('/:id', updateModeById);
+router.delete('/:id', deleteModeById);
+
+export default router;
