@@ -1,0 +1,177 @@
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background: #0d0d0d;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+/*Sidebar*/
+
+.admin-sidebar {
+  width: 260px;
+  background: #111;
+  padding: 25px;
+  border-right: 2px solid #222;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #FFB800;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+}
+
+.admin-section-title {
+  margin: 25px 0 10px;
+  font-size: 14px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-link {
+  display: block;
+  padding: 12px 12px;
+  margin-bottom: 3px;
+  background: #1a1a1a;
+  border-left: 4px solid transparent;
+  text-decoration: none;
+  color: #ddd;
+  border-radius: 4px;
+  transition: 0.25s ease;
+}
+
+.admin-link:hover {
+  background: #292929;
+  border-left: 4px solid #FFB800;
+}
+
+.admin-link.active {
+  background: #202020;
+  border-left: 4px solid #FFD700;
+}
+
+/*Panel de admin*/
+
+.admin-content {
+  flex: 1;
+  padding: 40px 55px;
+  background: #0d0d0d;
+}
+.admin-page-title {
+  font-size: 32px;
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 25px;
+  color: #FFB800;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.admin-table th {
+  color: #FFC800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.admin-table tr:hover td {
+  background: #1b1b1b;
+}
+
+/*Botones*/
+
+.admin-btn-create {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #FF8C00;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.admin-btn-create:hover {
+  background: #ffa733;
+}
+
+.admin-btn-edit {
+  color: #4DA3FF;
+  margin-right: 12px;
+  text-decoration: none;
+}
+
+.admin-btn-delete {
+  color: #FF4D4D;
+  text-decoration: none;
+}
+
+.admin-btn-edit:hover,
+.admin-btn-delete:hover {
+  text-decoration: underline;
+}
+
+/*Form*/
+
+.admin-form {
+  max-width: 500px;
+  background: #111;
+  padding: 25px;
+  border-radius: 6px;
+  border: 1px solid #222;
+}
+
+.admin-form label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.admin-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #FFB800;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  transition: 0.25s;
+}
+
+.admin-form button:hover {
+  background: #ffd24d;
+}
